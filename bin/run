@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cmd=(run -- "\"${@}\"")
+
+set -xe
+RUST_LOG=debug exec nix develop -c cargo watch -x "${cmd[*]}"

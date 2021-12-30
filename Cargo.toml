@@ -1,0 +1,30 @@
+[package]
+authors = ["Viktor Kleen <viktor@kleen.org>"]
+edition = "2021"
+# If you change the name here, you must also do it in flake.nix
+name = "infraconf"
+version = "0.1.0"
+description = "Infrastructure configuration"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+env_logger = "0.9.0"
+log = "0.4.14"
+clap = { version = "3.0.0-rc.9", features = [ "derive", "cargo", "wrap_help", "unicode" ] }
+clap_generate = "3.0.0-rc.9"
+const_format = { version = "0.2.22", features = [ "fmt" ] }
+paste = "1.0.6"
+anyhow = "1.0.52"
+
+[dependencies.tokio]
+version = "1.15.0"
+features = [
+  "fs",
+  "io-util",
+  "macros",
+  "process",
+  "rt",
+  "rt-multi-thread",
+  "sync",
+]
